@@ -2,7 +2,7 @@
 Author: Aiden Li
 Date: 2022-05-03 17:58:29
 LastEditors: Aiden Li (i@aidenli.net)
-LastEditTime: 2022-05-04 22:31:30
+LastEditTime: 2022-05-04 23:19:29
 Description: Choosing the descent direction.
 '''
 import numpy as np
@@ -10,7 +10,6 @@ import numpy as np
 def get_step_size(x, grad, fn, grad_fn, hessian_fn, points=1000, mode='even'):
     if mode == 'even':
         step_sizes = np.linspace(0, 1, points)
-        dxs = grad[:, np.newaxis] @ step_sizes[np.newaxis, :]
         xs = x[:, np.newaxis].repeat(points, axis=1) + grad[:, np.newaxis] @ step_sizes[np.newaxis, :]
         min_step_idx = np.argmin(fn(xs))
         return step_sizes[min_step_idx]

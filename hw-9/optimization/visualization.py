@@ -2,12 +2,11 @@
 Author: Aiden Li
 Date: 2022-05-03 17:52:10
 LastEditors: Aiden Li (i@aidenli.net)
-LastEditTime: 2022-05-04 23:09:08
+LastEditTime: 2022-05-04 23:19:19
 Description: Visualization functions.
 '''
 import matplotlib.pyplot as plt
 import numpy as np
-import seaborn as sns
 
 def contour_plot(fn, x_range=[-2.5, 2.5], y_range=[-2.5, 2.5], x_points=100, y_points=100, cmap='jet'):
     xx, yy = np.meshgrid(np.linspace(x_range[0], x_range[1], x_points), np.linspace(y_range[0], y_range[1], y_points))
