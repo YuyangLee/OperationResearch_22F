@@ -2,7 +2,7 @@
 Author: Aiden Li
 Date: 2022-05-03 17:01:48
 LastEditors: Aiden Li (i@aidenli.net)
-LastEditTime: 2022-05-04 23:19:08
+LastEditTime: 2022-05-10 15:18:13
 Description: Optimization of convex functions with GD and SD.
 '''
 
@@ -53,9 +53,11 @@ if __name__ == '__main__':
         [-8 * x[0], 4]
     ])
     
-    init_x = np.random.randn(2)
+    # init_x = np.random.randn(2)
+    init_x = np.zeros(2)
+    
     con_plot = visualization.contour_plot(f, [-1.5, 1.5], [-1.5, 1.5], 1000, 1000, 'RdBu')
-    plt.savefig('hw-9/visualization/function_contour_plot.svg')
+    plt.savefig('hw-9/visualization/function_contour_plot.png')
     plt.show()
     
     methods_dict = {
@@ -98,10 +100,10 @@ if __name__ == '__main__':
         max_y = max(max_y, traj_max_y)
         
     con_trajs_plot = visualization.contour_plot_with_tours(f, x_trajs, labels, [min_x - 0.1, max_x + 0.1], [min_y - 0.1, max_y + 0.1], 1000, 1000, 'RdBu')
-    plt.savefig('hw-9/visualization/descent_trajectories.svg')
+    plt.savefig('hw-9/visualization/descent_trajectories.png')
     plt.show()
     
     val_trajs_plot = visualization.val_descent(val_trajs, labels)
-    plt.savefig('hw-9/visualization/value_descent.svg')
+    plt.savefig('hw-9/visualization/value_descent.png')
     plt.show()
         
